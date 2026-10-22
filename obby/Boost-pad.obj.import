@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgcwxdw5pr3dm"
+path="res://.godot/imported/Boost-pad.obj-5dd3c0b7ace5c5dcda89986c17b54ee5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Boost-pad.obj-5dd3c0b7ace5c5dcda89986c17b54ee5.mesh"]
+
+source_file="res://Boost-pad.obj"
+dest_files=["res://.godot/imported/Boost-pad.obj-5dd3c0b7ace5c5dcda89986c17b54ee5.mesh", "res://.godot/imported/Boost-pad.obj-5dd3c0b7ace5c5dcda89986c17b54ee5.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

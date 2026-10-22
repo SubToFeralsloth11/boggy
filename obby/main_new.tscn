@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://mainnew001"]
+
+[ext_resource type="PackedScene" path="res://roblox_character.tscn" id="1_char"]
+[ext_resource type="Script" path="res://obby_generator.gd" id="2_gen"]
+[ext_resource type="Script" path="res://obby_game.gd" id="3_game"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7mycd"]
+rayleigh_coefficient = 20.43
+rayleigh_color = Color(0.25882354, 0.36078432, 0.99215686, 1)
+mie_coefficient = 1.0
+mie_eccentricity = 0.83
+mie_color = Color(0.15297377, 0.44184944, 0.8954451, 1)
+turbidity = 0.0
+sun_disk_scale = 306.39
+ground_color = Color(0.2242321, 0.40189832, 1, 1)
+energy_multiplier = 2.16
+use_debanding = false
+
+[sub_resource type="Sky" id="Sky_f0tpo"]
+sky_material = SubResource("PhysicalSkyMaterial_7mycd")
+
+[sub_resource type="Environment" id="Environment_araf6"]
+background_mode = 2
+sky = SubResource("Sky_f0tpo")
+
+[node name="Main" type="Node3D" unique_id=229290084]
+script = ExtResource("3_game")
+
+[node name="ObbyGenerator" type="Node3D" parent="." unique_id=10001]
+script = ExtResource("2_gen")
+
+[node name="Player" parent="." unique_id=10002 instance=ExtResource("1_char")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2113679423]
+transform = Transform3D(1, 0, 0, 0, -0.011675851, 0.9999318, 0, -0.9999318, -0.011675851, 0, 26.989918, 0)
+light_energy = 3.03
+light_volumetric_fog_energy = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1833472238]
+environment = SubResource("Environment_araf6")

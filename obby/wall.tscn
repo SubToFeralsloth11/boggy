@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://wall001"]
+
+[ext_resource type="ArrayMesh" path="res://Wall.obj" id="1_wall"]
+
+[sub_resource type="StandardMaterial3D" id="WallMaterial"]
+albedo_color = Color(0.4, 0.4, 0.45, 1)
+roughness = 0.6
+metallic = 0.1
+
+[sub_resource type="BoxShape3D" id="WallShape"]
+size = Vector3(4, 6, 1)
+
+[node name="Wall" type="StaticBody3D" unique_id=3001]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=3002]
+mesh = ExtResource("1_wall")
+surface_material_override/0 = SubResource("WallMaterial")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=3003]
+shape = SubResource("WallShape")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)

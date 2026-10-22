@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://obbyui001"]
+
+[ext_resource type="Script" path="res://obby_ui.gd" id="1_ui_script"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_left = 8
+corner_radius_bottom_right = 8
+border_width = 2
+border_color = Color(1, 1, 1, 0.3)
+
+[sub_resource type="StyleBoxFlat" id="BarBgStyle"]
+bg_color = Color(0, 0, 0, 0.7)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="BarFillStyle"]
+bg_color = Color(0.2, 0.8, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="BarFillStyle2"]
+bg_color = Color(1, 0.8, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="BarFillStyle3"]
+bg_color = Color(1, 0.3, 0.3, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_left = 4
+corner_radius_bottom_right = 4
+
+[node name="ObbyUI" type="CanvasLayer" unique_id=6001]
+script = ExtResource("1_ui_script")
+
+[node name="MainContainer" type="VBoxContainer" parent="." unique_id=6002]
+layout_mode = 2
+anchors_preset = 15
+offset_left = 20
+offset_top = 20
+offset_right = 20
+offset_bottom = 20
+
+[node name="TopBar" type="HBoxContainer" parent="MainContainer" unique_id=6003]
+size_flags_horizontal = 3
+
+[node name="HeightPanel" type="PanelContainer" parent="TopBar" unique_id=6004]
+custom_minimum_size = Vector2(200, 80)
+theme_override_styles/panel = SubResource("PanelStyle")
+size_flags_horizontal = 3
+
+[node name="HeightVBox" type="VBoxContainer" parent="HeightPanel" unique_id=6005]
+layout_mode = 2
+anchors_preset = 15
+offset_left = 10
+offset_top = 10
+offset_right = 10
+offset_bottom = 10
+
+[node name="HeightLabel" type="Label" parent="HeightVBox" unique_id=6006]
+text = "HEIGHT"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
+custom_minimum_size = Vector2(0, 20)
+
+[node name="HeightValue" type="Label" parent="HeightVBox" unique_id=6007]
+text = "0 m"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(0.2, 1, 1, 1)
+custom_minimum_size = Vector2(0, 35)
+
+[node name="HeightBarBg" type="PanelContainer" parent="HeightVBox" unique_id=6008]
+custom_minimum_size = Vector2(0, 8)
+theme_override_styles/panel = SubResource("BarBgStyle")
+
+[node name="HeightBarFill" type="ProgressBar" parent="HeightBarBg" unique_id=6009]
+layout_mode = 2
+anchors_preset = 15
+offset_left = 2
+offset_top = 2
+offset_right = 2
+offset_bottom = 2
+max_value = 1000
+value = 0
+theme_override_styles/progress = SubResource("BarFillStyle")
+theme_override_styles/background = SubResource("BarBgStyle")
+
+[node name="TimePanel" type="PanelContainer" parent="TopBar" unique_id=6010]
+custom_minimum_size = Vector2(180, 80)
+theme_override_styles/panel = SubResource("PanelStyle")
+size_flags_horizontal = 3
+
+[node name="TimeVBox" type="VBoxContainer" parent="TimePanel" unique_id=6011]
+layout_mode = 2
+anchors_preset = 15
+offset_left = 10
+offset_top = 10
+offset_right = 10
+offset_bottom = 10
+
+[node name="TimeLabel" type="Label" parent="TimeVBox" unique_id=6012]
+text = "TIME"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1, 0.9, 0.7, 1)
+custom_minimum_size = Vector2(0, 20)
+
+[node name="TimeValue" type="Label" parent="TimeVBox" unique_id=6013]
+text = "00:00.00"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 0.8, 0.2, 1)
+custom_minimum_size = Vector2(0, 35)
+
+[node name="TimeBarBg" type="PanelContainer" parent="TimeVBox" unique_id=6014]
+custom_minimum_size = Vector2(0, 8)
+theme_override_styles/panel = SubResource("BarBgStyle")
+
+[node name="TimeBarFill" type="ProgressBar" parent="TimeBarBg" unique_id=6015]
+layout_mode = 2
+anchors_preset = 15
+offset_left = 2
+offset_top = 2
+offset_right = 2
+offset_bottom = 2
+max_value = 3600
+value = 0
+theme_override_styles/progress = SubResource("BarFillStyle2")
+theme_override_styles/background = SubResource("BarBgStyle")
+
+[node name="CheckpointPanel" type="PanelContainer" parent="TopBar" unique_id=6016]
+custom_minimum_size = Vector2(180, 80)
+theme_override_styles/panel = SubResource("PanelStyle")
+size_flags_horizontal = 3
+
+[node name="CPVBox" type="VBoxContainer" parent="CheckpointPanel" unique_id=6017]
+layout_mode = 2
+anchors_preset = 15
+offset_left = 10
+offset_top = 10
+offset_right = 10
+offset_bottom = 10
+
+[node name="CPLabel" type="Label" parent="CPVBox" unique_id=6018]
+text = "CHECKPOINTS"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1, 0.7, 0.7, 1)
+custom_minimum_size = Vector2(0, 20)
+
+[node name="CPValue" type="Label" parent="CPVBox" unique_id=6019]
+text = "0"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+custom_minimum_size = Vector2(0, 35)
+
+[node name="CPBarBg" type="PanelContainer" parent="CPVBox" unique_id=6020]
+custom_minimum_size = Vector2(0, 8)
+theme_override_styles/panel = SubResource("BarBgStyle")
+
+[node name="CPBarFill" type="ProgressBar" parent="CPBarBg" unique_id=6021]
+layout_mode = 2
+anchors_preset = 15
+offset_left = 2
+offset_top = 2
+offset_right = 2
+offset_bottom = 2
+max_value = 100
+value = 0
+theme_override_styles/progress = SubResource("BarFillStyle3")
+theme_override_styles/background = SubResource("BarBgStyle")
+
+[node name="BottomInfo" type="HBoxContainer" parent="MainContainer" unique_id=6022]
+layout_mode = 2
+anchors_preset = 15
+offset_left = 0
+offset_top = 0
+offset_right = 0
+offset_bottom = 20
+size_flags_vertical = 3
+
+[node name="SpeedLabel" type="Label" parent="BottomInfo" unique_id=6023]
+text = "Speed: 0 m/s"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(1, 1, 1, 0.8)
+size_flags_horizontal = 3

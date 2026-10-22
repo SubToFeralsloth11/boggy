@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://yellowplat001"]
+[ext_resource type="ArrayMesh" path="res://yellow-platform.obj" id="1_mdl"]
+[sub_resource type="StandardMaterial3D" id="YellowMat"]
+albedo_color = Color(1, 1, 0.1, 1)
+emission = Color(1, 1, 0.1, 1)
+emission_energy_multiplier = 0.5
+metallic = 0.2
+roughness = 0.4
+[sub_resource type="BoxShape3D" id="PlatShape"]
+size = Vector3(2.0114746, 0.50128174, 2.0108032)
+[node name="Platform" type="StaticBody3D" unique_id=4051]
+[node name="BluePlatform" type="MeshInstance3D" parent="." unique_id=4052]
+mesh = ExtResource("1_mdl")
+surface_material_override/0 = SubResource("YellowMat")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=4053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.4982605, -0.005279541)
+shape = SubResource("PlatShape")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://boostpad001"]
+
+[ext_resource type="ArrayMesh" path="res://Boost-pad.obj" id="1_boost"]
+
+[sub_resource type="StandardMaterial3D" id="BoostMaterial"]
+albedo_color = Color(1, 0.8, 0.1, 1)
+emission = Color(1, 0.8, 0.1, 1)
+emission_energy_multiplier = 2.0
+roughness = 0.2
+metallic = 0.5
+
+[sub_resource type="BoxShape3D" id="BoostShape"]
+size = Vector3(3, 0.5, 3)
+
+[node name="BoostPad" type="StaticBody3D" unique_id=2001]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2002]
+mesh = ExtResource("1_boost")
+surface_material_override/0 = SubResource("BoostMaterial")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2003]
+shape = SubResource("BoostShape")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dbc4lwmvnhv8f"]
+
+[ext_resource type="ArrayMesh" uid="uid://b42qdpio0nqhy" path="res://Blue-platform.obj" id="1_mi635"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0tpo"]
+albedo_color = Color(0.003921569, 1, 0.03529412, 1)
+metallic = 0.48
+metallic_specular = 0.0
+roughness = 0.34
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_araf6"]
+size = Vector3(2.0114746, 0.50128174, 2.0108032)
+
+[node name="platform" type="StaticBody3D" unique_id=831119419]
+
+[node name="BluePlatform" type="MeshInstance3D" parent="." unique_id=991607302]
+mesh = ExtResource("1_mi635")
+surface_material_override/0 = SubResource("StandardMaterial3D_f0tpo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1827536133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.4982605, -0.005279541)
+shape = SubResource("BoxShape3D_araf6")

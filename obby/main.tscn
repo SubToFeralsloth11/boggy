@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bdm24qlteiipr"]
+
+[ext_resource type="PackedScene" uid="uid://dcfiq5vxsbfpr" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ro8bdii8ur2r" path="res://metal_bar.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dbc4lwmvnhv8f" path="res://platform.tscn" id="3_h2yge"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7mycd"]
+rayleigh_coefficient = 20.43
+rayleigh_color = Color(0.25882354, 0.36078432, 0.99215686, 1)
+mie_coefficient = 1.0
+mie_eccentricity = 0.83
+mie_color = Color(0.15297377, 0.44184944, 0.8954451, 1)
+turbidity = 0.0
+sun_disk_scale = 306.39
+ground_color = Color(0.2242321, 0.40189832, 1, 1)
+energy_multiplier = 2.16
+use_debanding = false
+
+[sub_resource type="Sky" id="Sky_f0tpo"]
+sky_material = SubResource("PhysicalSkyMaterial_7mycd")
+
+[sub_resource type="Environment" id="Environment_araf6"]
+background_mode = 2
+sky = SubResource("Sky_f0tpo")
+
+[node name="Main" type="Node3D" unique_id=229290084]
+
+[node name="Player" parent="." unique_id=1145028112 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1209662, 0)
+
+[node name="Metal bar" parent="." unique_id=163670875 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20256472, -0.051542997, 6.580841)
+
+[node name="Metal bar" parent="Metal bar" unique_id=1108492125 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.9305329, 0, 0.36620834, -0.06586447, 0.9836931, 0.16736117, -0.36023664, -0.1798552, 0.9153588, 1.989047, 0.6593852, 7.2308006)
+
+[node name="Metal bar" parent="Metal bar/Metal bar" unique_id=1500183897 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.99543023, -0.06062733, 0.073774666, 0.070926815, 0.98672, -0.146127, -0.063935906, 0.1506919, 0.9865112, 10.971998, -3.5762787e-07, 10.766002)
+
+[node name="Metal bar" parent="Metal bar/Metal bar/Metal bar" unique_id=1416910264 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.69991314, -0.115429, -0.704839, 0.00012380444, 0.986874, -0.16149388, 0.71422833, 0.112944424, 0.6907403, 7.1511087, 0.15435779, -0.09101677)
+
+[node name="Metal bar" parent="Metal bar/Metal bar/Metal bar/Metal bar" unique_id=561118190 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.43067083, -0.1170534, 0.8948864, -0.19109812, 0.9572439, 0.21717717, -0.88204587, -0.2645429, 0.38988808, 4.5752964, -0.20751, -2.6820145)
+
+[node name="platform" parent="." unique_id=1775084058 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="platform" parent="platform" unique_id=831119419 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.348031, 2.3162632, 17.514336)
+
+[node name="platform" parent="platform/platform" unique_id=1926735503 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7630224, 1.3280096, 2.9934082)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2113679423]
+transform = Transform3D(1, 0, 0, 0, -0.011675851, 0.9999318, 0, -0.9999318, -0.011675851, 0, 26.989918, 0)
+light_energy = 3.03
+light_volumetric_fog_energy = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1833472238]
+environment = SubResource("Environment_araf6")
+
+[node name="collions" type="Node3D" parent="." unique_id=361436486]
+
+[node name="platform2" parent="." unique_id=792641106 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.341732, -9.536743e-07, 21.853891)
+
+[node name="platform3" parent="." unique_id=1567249415 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.646175, 0.7187085, 26.277802)
+
+[node name="Metal bar2" parent="." unique_id=1247624562 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 0.6409257, 0.5838191, 0, -0.17173553, 2.1788423, 30, 2, 35)
+
+[node name="platform4" parent="." unique_id=1374144964 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.704283, 4.4964004, 43.152954)
+
+[node name="platform5" parent="." unique_id=639468302 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.607164, 5.915754, 46.710415)
+
+[node name="Metal bar3" parent="." unique_id=54255882 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.83590364, 0, 0.5488762, 0.12826627, 0.97231144, -0.19534138, -0.53367865, 0.23368888, 0.8127587, 20.190332, 6.664655, 41.54569)
+
+[node name="platform6" parent="." unique_id=1269554596 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.158846, 8.184305, 36.031914)
+
+[node name="platform7" parent="." unique_id=986623926 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1.0811863, 0.08701703, 0.95044285, 0, 0.9440803, -1.2577438, -0.29583004, 0.31802586, 3.4736357, 16.714363, 10.776376, 28.455566)
+
+[node name="Metal bar4" parent="." unique_id=1544659138 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 0.14000848, 0.99015033, 0, -0.99015033, 0.14000848, 16.355541, 10.731482, 20.328297)
+
+[node name="platform8" parent="." unique_id=646417256 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.706696, 14.158218, 14.965847)

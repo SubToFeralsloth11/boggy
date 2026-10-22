@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://robloxchar001"]
+
+[ext_resource type="Script" path="res://roblox_character.gd" id="1_char"]
+
+[sub_resource type="CapsuleShape3D" id="BodyShape"]
+height = 4.0
+radius = 0.6
+
+[sub_resource type="BoxShape3D" id="HeadShape"]
+size = Vector3(1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="TorsoShape"]
+size = Vector3(1.5, 2, 1)
+
+[sub_resource type="BoxShape3D" id="LimbShape"]
+size = Vector3(0.5, 1.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="SkinMaterial"]
+albedo_color = Color(0.98, 0.85, 0.7, 1)
+roughness = 0.7
+metallic = 0.0
+
+[sub_resource type="StandardMaterial3D" id="ShirtMaterial"]
+albedo_color = Color(0.2, 0.4, 0.9, 1)
+roughness = 0.5
+metallic = 0.0
+
+[sub_resource type="StandardMaterial3D" id="PantsMaterial"]
+albedo_color = Color(0.1, 0.1, 0.3, 1)
+roughness = 0.5
+metallic = 0.0
+
+[sub_resource type="BoxMesh" id="TorsoMesh"]
+size = Vector3(1.5, 2, 1)
+
+[sub_resource type="BoxMesh" id="HeadMesh"]
+size = Vector3(1, 1, 1)
+
+[sub_resource type="BoxMesh" id="LimbMesh"]
+size = Vector3(0.5, 1.5, 0.5)
+
+[node name="RobloxCharacter" type="CharacterBody3D" unique_id=1001]
+script = ExtResource("1_char")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1002]
+shape = SubResource("BodyShape")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Graphics" type="Node3D" parent="." unique_id=1003]
+
+[node name="Torso" type="MeshInstance3D" parent="Graphics" unique_id=1004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("TorsoMesh")
+surface_material_override/0 = SubResource("ShirtMaterial")
+
+[node name="Head" type="MeshInstance3D" parent="Graphics" unique_id=1005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("HeadMesh")
+surface_material_override/0 = SubResource("SkinMaterial")
+
+[node name="LeftArm" type="Node3D" parent="Graphics" unique_id=1006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.75, 0)
+
+[node name="LeftArmMesh" type="MeshInstance3D" parent="Graphics/LeftArm" unique_id=1007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+mesh = SubResource("LimbMesh")
+surface_material_override/0 = SubResource("SkinMaterial")
+
+[node name="RightArm" type="Node3D" parent="Graphics" unique_id=1008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.75, 0)
+
+[node name="RightArmMesh" type="MeshInstance3D" parent="Graphics/RightArm" unique_id=1009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+mesh = SubResource("LimbMesh")
+surface_material_override/0 = SubResource("SkinMaterial")
+
+[node name="LeftLeg" type="Node3D" parent="Graphics" unique_id=1010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.5, 0)
+
+[node name="LeftLegMesh" type="MeshInstance3D" parent="Graphics/LeftLeg" unique_id=1011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+mesh = SubResource("LimbMesh")
+surface_material_override/0 = SubResource("PantsMaterial")
+
+[node name="RightLeg" type="Node3D" parent="Graphics" unique_id=1012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.5, 0)
+
+[node name="RightLegMesh" type="MeshInstance3D" parent="Graphics/RightLeg" unique_id=1013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+mesh = SubResource("LimbMesh")
+surface_material_override/0 = SubResource("PantsMaterial")

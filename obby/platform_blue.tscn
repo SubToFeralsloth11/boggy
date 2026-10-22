@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://blueplat001"]
+
+[ext_resource type="ArrayMesh" path="res://Blue-platform.obj" id="1_mdl"]
+
+[sub_resource type="StandardMaterial3D" id="BlueMat"]
+albedo_color = Color(0.2, 0.4, 1, 1)
+metallic = 0.3
+roughness = 0.4
+
+[sub_resource type="BoxShape3D" id="PlatShape"]
+size = Vector3(2.0114746, 0.50128174, 2.0108032)
+
+[node name="Platform" type="StaticBody3D" unique_id=4001]
+
+[node name="BluePlatform" type="MeshInstance3D" parent="." unique_id=4002]
+mesh = ExtResource("1_mdl")
+surface_material_override/0 = SubResource("BlueMat")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=4003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032958984, 0.4982605, -0.005279541)
+shape = SubResource("PlatShape")
