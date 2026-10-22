@@ -2,7 +2,7 @@ extends Node3D
 class_name ObbyGame
 
 var generator: ObbyGenerator
-var player: RobloxCharacter
+var player: FirstPersonPlayer
 var ui_root: CanvasLayer
 
 # UI elements
@@ -21,7 +21,7 @@ var max_height: float = 0
 func _ready() -> void:
 	# Get references
 	generator = $ObbyGenerator
-	player = $Player
+	player = $FirstPersonPlayer
 	
 	# Load all platform variants
 	var platform_scenes = [

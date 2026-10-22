@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bdm24qlteiipr"]
 
-[ext_resource type="PackedScene" uid="uid://dcfiq5vxsbfpr" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://firstpersonplayer" path="res://FirstPersonPlayer.tscn" id="1_fpp"]
 [ext_resource type="PackedScene" uid="uid://ro8bdii8ur2r" path="res://metal_bar.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dbc4lwmvnhv8f" path="res://platform.tscn" id="3_h2yge"]
 
@@ -25,7 +25,7 @@ sky = SubResource("Sky_f0tpo")
 
 [node name="Main" type="Node3D" unique_id=229290084]
 
-[node name="Player" parent="." unique_id=1145028112 instance=ExtResource("1_ig7tw")]
+[node name="FirstPersonPlayer" parent="." unique_id=1145028112 instance=ExtResource("1_fpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1209662, 0)
 
 [node name="Metal bar" parent="." unique_id=163670875 instance=ExtResource("2_0xm2m")]
